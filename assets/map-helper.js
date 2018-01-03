@@ -49,7 +49,7 @@ function gMap () {
                 scrollwheel: false,
                 lat: mapLat,
                 lng: mapLng,
-                styles: styles,
+                //styles: styles,
                 zoom: mapZoom
             });
             // if icon path setted then show marker
