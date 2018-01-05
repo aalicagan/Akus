@@ -30,19 +30,19 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
             $mail->AddReplyTo( $email , $name );
             $mail->AddAddress( $toemail , $toname );
             $mail->Subject = $subject;
-            $name = isset($name) ? "Name: $name<br><br>" : '';
-            $email = isset($email) ? "Email: $email<br><br>" : '';
-            $phone = isset($phone) ? "Phone: $phone<br><br>" : '';
-            $message = isset($message) ? "Message: $message<br><br>" : '';
+            $name = isset($name) ? "İsim: $name<br><br>" : '';
+            $email = isset($email) ? "Mail Adresi: $email<br><br>" : '';
+            $phone = isset($phone) ? "Telefon: $phone<br><br>" : '';
+            $message = isset($message) ? "Mesaj: $message<br><br>" : '';
             $referrer = $_SERVER['HTTP_REFERER'] ? '<br><br><br>This Form was submitted from: ' . $_SERVER['HTTP_REFERER'] : '';
             $body = "$name $email $phone $message $referrer";
             $mail->MsgHTML( $body );
             $sendEmail = $mail->Send();
             if( $sendEmail == true ):
-                $message = 'We have <strong>successfully</strong> received your Message and will get Back to you as soon as possible.';
+                $message = '<strong>Mesajınız</strong> bize ulaştı. Çok yakında size geri dönüş yapacağız.';
                 $status = "true";
             else:
-                $message = 'Email <strong>could not</strong> be sent due to some Unexpected Error. Please Try Again later.<br /><br /><strong>Reason:</strong><br />' . $mail->ErrorInfo . '';
+                $message = 'Beklenmeyen bir hata oluştu.<br /><br /><strong>Reason:</strong><br />' . $mail->ErrorInfo . '';
                 $status = "false";
             endif;
         } else {
@@ -50,11 +50,11 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
             $status = "false";
         }
     } else {
-        $message = 'Please <strong>Fill up</strong> all the Fields and Try Again.';
+        $message = 'Lütfen tüm alanları doldurunuz ve tekrar deneyiniz..';
         $status = "false";
     }
 } else {
-    $message = 'An <strong>unexpected error</strong> occured. Please Try Again later.';
+    $message = 'Beklenmeyen bir hata oluştu. Daha sonra tekrar deneyiniz.';
     $status = "false";
 }
 $status_array = array( 'message' => $message, 'status' => $status);
