@@ -79,31 +79,32 @@
                                 <span class="decor-line"></span>
                             </div><!-- /.inner-->
                         </div><!-- /.sec-title-->
-                        <form action="#" class="contact-form">
+                        <form id="contact-form" name="contact_form" class="contact-form" action="inc/sendmail.php" method="post">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-grp">
-                                        <input type="text" name="name" placeholder="İsminiz *" />
+                                        <input type="text" name="form_name" class="form-control required" placeholder="İsminiz *" />
                                     </div><!-- /.form-grp -->
                                 </div><!-- /.col-md-6 -->
                                 <div class="col-md-12">
                                     <div class="form-grp">
-                                        <input type="text" name="email" placeholder="Mail Adresiniz *" />
+                                        <input type="text" name="form_email" class="form-control required email" placeholder="Mail Adresiniz *" />
                                     </div><!-- /.form-grp -->
                                 </div><!-- /.col-md-6 -->
                                 <div class="col-md-12">
                                     <div class="form-grp">
-                                        <input type="text" name="phone" placeholder="Telefon Numaranız *" />
+                                        <input type="text" name="form_phone" placeholder="Telefon Numaranız *" class="form-control required" />
                                     </div><!-- /.form-grp -->
                                 </div><!-- /.col-md-6 -->
 								 <div class="col-md-12">
                                     <div class="form-grp">
-                                        <textarea name="form_message" class="form-control textarea required" placeholder="Mesajınız...."></textarea>
+                                        <textarea name="form_message"  rows="10" class="form-control textarea required" placeholder="Mesajınız...."></textarea>
                                     </div><!-- /.form-grp -->
                                 </div><!-- /.col-md-6 -->
                                 <div class="col-md-12">
                                     <div class="form-grp submit-box">
-                                        <button type="submit" class="thm-btn">Gönder</button>
+									<input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden" value="">
+                                        <button class="thm-btn" type="submit" data-loading-text="Lütfen Bekleyin...">Gönder</button>
                                     </div><!-- /.form-grp -->
                                 </div><!-- /.col-md-6 -->
                             </div><!-- /.orw -->
@@ -1145,183 +1146,8 @@
 
 
 
-	<footer class="footer has-black-color-overlay has-dark-texture">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-3">
-					<div class="footer-widget about-widget">
-						<a href="index.html"><img src="img/logo2.png" alt="" /></a>
-						<p>Landshaper HTML5 Template is build  for Lawn, Landscaping, Garden Companies, Florists, Ground skeepers, Landscape, Architects, Gardening Shops, and other lawn and landscaping related services. </p> 
-						<a href="#" class="thm-btn">Purchase for 17$</a>
-					</div><!-- /.footer-widget about-widget -->
-				</div><!-- /.col-md-3 -->
-				<div class="col-md-3">
-					<div class="footer-widget link-widget">
-						<div class="sec-title-two">
-							<h3><span class="white-color-text">Our Services</span></h3>
-							<span class="decor-line"></span>
-						</div><!-- /.sec-title-two -->
-						<ul class="links">
-							<li><a href="#">Design and Planning</a></li>
-							<li><a href="#">Lawn and Garden Care</a></li>
-							<li><a href="#">Irrigation & Drainage</a></li>
-							<li><a href="#">Snow & Ice Removal</a></li>
-							<li><a href="#">Spring & Fall Cleanup</a></li>
-							<li><a href="#">Stone & Hardscaping</a></li>
-							<li><a href="#">All Services</a></li>
-						</ul><!-- /.links -->
-					</div><!-- /.footer-widget link-widget -->
-				</div><!-- /.col-md-3 -->
-				<div class="col-md-3">
-					<div class="footer-widget subscribe-widget">
-						<div class="sec-title-two">
-							<h3><span class="white-color-text">Subscribe us</span></h3>
-							<span class="decor-line"></span>
-						</div><!-- /.sec-title-two -->
-						<p class="highlight">Sign up today for hints, tips and the latest product news - plus exclusive special offers.</p>
-						<form action="inc/mailchimp/subscribe.php" class="clearfix mailchimp-form">
-							<input type="text" name="email" placeholder="Email address" />
-							<button type="submit"><i class="fa fa-envelope-o"></i></button>
-						</form>
-						<p>Get Latest Updates & Offer</p>
-						<div class="result"></div><!-- /.result -->
-						<ul class="list-inline social">
-							<li>
-								<a href="#"><i class="fa fa-facebook"></i></a>								
-							</li><!-- comment for inline hack
-							--><li>
-								<a href="#"><i class="fa fa-twitter"></i></a>								
-							</li><!-- comment for inline hack
-							--><li>
-								<a href="#"><i class="fa fa-skype"></i></a>								
-							</li><!-- comment for inline hack
-							--><li>
-								<a href="#"><i class="fa fa-linkedin"></i></a>								
-							</li>
-						</ul><!-- /.list-inline -->
-					</div><!-- /.footer-widget link-widget -->
-				</div><!-- /.col-md-3 -->
-				<div class="col-md-3">
-					<div class="footer-widget contact-widget">
-						<div class="sec-title-two">
-							<h3><span class="white-color-text">Contact Details</span></h3>
-							<span class="decor-line"></span>
-						</div><!-- /.sec-title-two -->
-						<div class="footer-contact-info-carousel owl-theme owl-carousel">
-							<div class="item">
-								<ul class="contact-infos">
-									<li>
-										<div class="icon-box">
-											<i class="lsp-icon-signs"></i>
-										</div><!-- /.icon-box -->
-										<div class="text-box">
-											<p>008 City of Work ,<br />New York, NY 641109 US.</p>
-										</div><!-- /.text-box -->
-									</li>
-									<li>
-										<div class="icon-box">
-											<i class="lsp-icon-technology"></i>
-										</div><!-- /.icon-box -->
-										<div class="text-box">
-											<p>Call us: +3257 700 1430</p>
-										</div><!-- /.text-box -->
-									</li>
-									<li>
-										<div class="icon-box">
-											<i class="lsp-icon-note"></i>
-										</div><!-- /.icon-box -->
-										<div class="text-box">
-											<p>Mail us : USA@Statistic.com </p>
-										</div><!-- /.text-box -->
-									</li>
-									<li>
-										<div class="icon-box">
-											<i class="lsp-icon-clock"></i>
-										</div><!-- /.icon-box -->
-										<div class="text-box">
-											<p>Mon - Sat 9.00 - 20.00,<br />Sunday CLOSED</p>
-										</div><!-- /.text-box -->
-									</li>
-								</ul><!-- /.contact-infos -->						
-							</div><!-- /.item -->
-							<div class="item">
-								<ul class="contact-infos">
-									<li>
-										<div class="icon-box">
-											<i class="lsp-icon-signs"></i>
-										</div><!-- /.icon-box -->
-										<div class="text-box">
-											<p>008 City of Work ,<br />New York, NY 641109 US.</p>
-										</div><!-- /.text-box -->
-									</li>
-									<li>
-										<div class="icon-box">
-											<i class="lsp-icon-technology"></i>
-										</div><!-- /.icon-box -->
-										<div class="text-box">
-											<p>Call us: +3257 700 1430</p>
-										</div><!-- /.text-box -->
-									</li>
-									<li>
-										<div class="icon-box">
-											<i class="lsp-icon-note"></i>
-										</div><!-- /.icon-box -->
-										<div class="text-box">
-											<p>Mail us : USA@Statistic.com </p>
-										</div><!-- /.text-box -->
-									</li>
-									<li>
-										<div class="icon-box">
-											<i class="lsp-icon-clock"></i>
-										</div><!-- /.icon-box -->
-										<div class="text-box">
-											<p>Mon - Sat 9.00 - 20.00,<br />Sunday CLOSED</p>
-										</div><!-- /.text-box -->
-									</li>
-								</ul><!-- /.contact-infos -->						
-							</div><!-- /.item -->
-							<div class="item">
-								<ul class="contact-infos">
-									<li>
-										<div class="icon-box">
-											<i class="lsp-icon-signs"></i>
-										</div><!-- /.icon-box -->
-										<div class="text-box">
-											<p>008 City of Work ,<br />New York, NY 641109 US.</p>
-										</div><!-- /.text-box -->
-									</li>
-									<li>
-										<div class="icon-box">
-											<i class="lsp-icon-technology"></i>
-										</div><!-- /.icon-box -->
-										<div class="text-box">
-											<p>Call us: +3257 700 1430</p>
-										</div><!-- /.text-box -->
-									</li>
-									<li>
-										<div class="icon-box">
-											<i class="lsp-icon-note"></i>
-										</div><!-- /.icon-box -->
-										<div class="text-box">
-											<p>Mail us : USA@Statistic.com </p>
-										</div><!-- /.text-box -->
-									</li>
-									<li>
-										<div class="icon-box">
-											<i class="lsp-icon-clock"></i>
-										</div><!-- /.icon-box -->
-										<div class="text-box">
-											<p>Mon - Sat 9.00 - 20.00,<br />Sunday CLOSED</p>
-										</div><!-- /.text-box -->
-									</li>
-								</ul><!-- /.contact-infos -->						
-							</div><!-- /.item -->
-						</div><!-- /.contact-info-carousel owl-theme owl-carousel -->
-						
-					</div><!-- /.footer-widget link-widget -->
-				</div><!-- /.col-md-3 -->
-			</div><!-- /.row -->
-		</div><!-- /.container -->
+	<footer class="footer has-black-color-overlay has-dark-texture" id="footer">
+		
 	</footer><!-- /.footer -->
 	<section class="footer-bottom">
 		<div class="container">
@@ -1337,7 +1163,6 @@
 
 	
 
-<!-- <script src="http://code.jquery.com/jquery-latest.min.js"></script> -->
 <script src="assets/jquery-1.12.4.min.js"></script>
 
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
@@ -1392,12 +1217,13 @@
 
 
 <script src="assets/Polyglot-Language-Switcher-master/js/jquery.polyglot.language.switcher.js"></script>
-
+<script src="js/validation.js"></script>
 <script src="js/custom.js"></script>
 
 <script>
 $(document).ready(function(){
 $("#nav").load("menu.html",function(){$("#liAnasayfa").addClass("current");});
+$("#footer").load("footer.html");
 })
 </script>
 

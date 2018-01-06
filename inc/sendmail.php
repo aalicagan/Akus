@@ -15,7 +15,7 @@ $mail->Port = 587;                                    // TCP port to connect to
 $message = "";
 $status = "false";
 if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
-    if( $_POST['form_name'] != '' AND $_POST['form_email'] != '' AND $_POST['form_subject'] != '' ) {
+    if( $_POST['form_name'] != '' AND $_POST['form_email'] != '') {
         $name = $_POST['form_name'];
         $email = $_POST['form_email'];
         $subject = $_POST['form_subject'];

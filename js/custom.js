@@ -1033,7 +1033,6 @@ function mapAddress () {
 
 //Contact Form Validation
 if($("#contact-form").length){
-	debugger;
     $("#contact-form").validate({
         submitHandler: function(form) {
           var form_btn = $(form).find('button[type="submit"]');
